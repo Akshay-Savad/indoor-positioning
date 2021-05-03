@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patient Details</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!---Custom CSS-->
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/5888afab31.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section id="header" style="background-color: #363f4b">
+      <!---Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a
+            class="navbar-brand"
+            href="../html/categories.html"
+            style="color: white"
+            >Qurantinno</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <h2 class="navbar-text" style="color: white">
+                  Patient Details
+                </h2>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn" type="submit">
+                <i class="fas fa-bell"></i>
+              </button>
+            </form>
+            <form class="d-flex mx-2">
+              <button class="btn" id="logout" type="submit">
+                <i class="fas fa-sign-out-alt"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- <p id="content"></p> -->
+    <div class="container">
+      <table id="tableid" class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Patient Name</th>
+            <th>Patient Id</th>
+            <th>Band Id</th>
+            <th>Room Allocated</th>
+            <th>Discharge Time</th>
+            <th>Band Battery Percentage</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB9svilCeoVcGee5Tva12gvAt7NmUYoSpc',
+        authDomain: 'deepblue-ab539.firebaseapp.com',
+        databaseURL: 'https://deepblue-ab539-default-rtdb.firebaseio.com',
+        projectId: 'deepblue-ab539',
+        storageBucket: 'deepblue-ab539.appspot.com',
+        messagingSenderId: '693869040614',
+        appId: '1:693869040614:web:bb841fbc8e00c5f89a3c27',
+        measurementId: 'G-C9L065VTM5',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script defer src="../js/patientDetails.js"></script>
+    <script defer src="../js/auth/signOut.js"></script>
+  </body>
+</html>

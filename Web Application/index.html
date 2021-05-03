@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qurantinno</title>
+    <!---Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+      integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!---Custom CSS-->
+    <link rel="stylesheet" href="./css/style1.css" />
+    <link rel="stylesheet" href="./css/ball-atom.css" />
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/5888afab31.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--typed.js cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <!--Animate on Scroll CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--Animate on Scroll CSS-->
+  </head>
+  <body>
+    <!---Header Section-->
+    <div class="custom-loader" id="loader" style="display: none">
+      <div class="la-ball-clip-rotate la-dark la-3x">
+        <div></div>
+      </div>
+    </div>
+    <section id="header" style="background-color: #58bbf2">
+      <!---Navigation-->
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="padding: 0; background-color: #363f4b"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">Qurantinno</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./html/categories.html">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./php/contactus.php">Contact</a>
+              </li>
+              <li
+                id="loginBtn"
+                class="nav-item"
+                onclick="document.getElementById('id01').style.display='block'"
+                style="cursor: pointer"
+              >
+                <a class="nav-link">Login</a>
+              </li>
+            </ul>
+            <!-- <form class="d-flex">
+            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn" type="submit"> <i class="fas fa-search"></i> </button>
+          </form> -->
+          </div>
+        </div>
+      </nav>
+
+      <hr style="margin: 0; border-top: 2px solid black" />
+      <!--Login modal-->
+      <div id="id01" class="modal">
+        <form class="modal-content animate" action="index.php" method="post">
+          <div class="imgcontainer">
+            <span
+              onclick="document.getElementById('id01').style.display='none'"
+              class="close"
+              title="Close Modal"
+              >&times;</span
+            >
+            <img
+              src="images/login.jpg"
+              style="height: 170px; width: 170px"
+              alt="Avatar"
+              class="avatar"
+            />
+          </div>
+
+          <div class="container">
+            <label for="uname"><b>Email Id</b></label>
+            <input
+              type="email"
+              placeholder="Enter Email Id"
+              name="email"
+              id="email"
+              required
+            />
+
+            <label for="psw"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              id="pwd"
+              required
+            />
+
+            <button class="lbutton" name="submit" type="submit" id="submitBtn">
+              Login
+            </button>
+          </div>
+
+          <div class="container" style="background-color: #f1f1f1">
+            <button
+              type="button"
+              onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtn"
+            >
+              Cancel
+            </button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+
+      <!---header Text Section-->
+      <section
+        id="headertext"
+        style="
+          background: url(images/header-8.jpeg);
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        "
+      >
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-6 p-2 d-flex align-items-center justify-content-center texthead"
+            >
+              <div class="textContainer">
+                <h2>Get Quarantined with <span> Quarantinno!</span></h2>
+                <p style="font-size: 20px">
+                  To use IoT for creating a virtual Geofence for accurate
+                  movement tracking of patients within hospital
+                </p>
+                <!-- style="color:white;" -->
+                <button class="btn">
+                  <a
+                    id="readmorebtn"
+                    href="https://deepblue.co.in/geofencing-is-for-geofencing-problem/"
+                    target="_blank"
+                    >Read More</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="download" style="background-color: #e9f5f7">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="appDetails">
+              <h3>Features Provided By <span> Qurantinno</span></h3>
+
+              <div class="step d-flex flex-wrap align-items-center">
+                <div class="numContainer">
+                  <h2>01</h2>
+                </div>
+                <h4><span id="selectc"></span></h4>
+              </div>
+              <div class="step d-flex flex-wrap align-items-center">
+                <div class="numContainer">
+                  <h2>02</h2>
+                </div>
+                <h4><span id="selectp"></span></h4>
+              </div>
+              <div class="step d-flex flex-wrap align-items-center">
+                <div class="numContainer">
+                  <h2>03</h2>
+                </div>
+                <h4><span id="add"></span></h4>
+              </div>
+              <div class="step d-flex flex-wrap align-items-center">
+                <div class="numContainer">
+                  <h2>04</h2>
+                </div>
+                <h4><span id="order"></span></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 mt-lg-0">
+            <div class="appContainer">
+              <img
+                class="img-fluid"
+                style="width: 600px; height: 400px"
+                src="images/indimg.PNG"
+                alt="Image"
+                srcset=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footerContainer">
+              <h1 style="color: white">
+                <i class="fas fa-plus-circle" style="color: white"></i>&nbsp
+                Qurantinno
+              </h1>
+              <h6 style="color: white">
+                Health is Wealth. Maintain social distancing<br />And stay away
+                frorm corona virus
+              </h6>
+              <ul>
+                <li>
+                  <i class="fas fa-address-card" style="color: white"></i>121,
+                  Shivaji Nagar, Pune
+                </li>
+                <li><i class="fas fa-envelope"></i>example@gmail.com</li>
+                <li><i class="fas fa-phone-alt"></i> 8457693211</li>
+                <br />
+                <li style="display: inline-block">
+                  <i class="fab fa-facebook"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-instagram"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-twitter"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-youtube"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-facebook-messenger"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="footerContainer">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><i class="fas fa-angle-right"></i> Login</li>
+                <li><i class="fas fa-angle-right"></i> Add Patient</li>
+                <li><i class="fas fa-angle-right"></i> Add Band</li>
+                <li><i class="fas fa-angle-right"></i> Discharge Patient</li>
+                <li><i class="fas fa-angle-right"></i> Track Patients</li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="col-lg-4">
+        <div class="footerContainer">
+            <h5>Contact Us</h5>
+            <ul>
+            <li><i class="fas fa-phone-alt"></i> 9169068212 </li>
+            <li><i class="fas fa-phone-alt"></i> 8457693211 </li>
+            <li><i class="fas fa-envelope"></i>example@gmail.com </li>
+            <li><i class="fas fa-envelope"></i>example@gmail.com </li>
+            <li><i class="fas fa-map-marker-alt"></i> Panvel, Navi mumbai </li>
+            </ul>
+            
+        </div>
+        </div> -->
+          <div class="col-lg-3">
+            <div class="footerContainer">
+              <h5>Services</h5>
+              <ul>
+                <li><i class="fas fa-angle-right"></i>Geofence Alert</li>
+                <li><i class="fas fa-angle-right"></i>Pulse rate check</li>
+                <li><i class="fas fa-angle-right"></i>Tracking of Patients</li>
+                <li><i class="fas fa-angle-right"></i>Social Distancing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Scroll to Top Button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fas fa-rocket"></i>
+    </button>
+
+    <!--Scroll to top JS-->
+    <script>
+      //Get the button
+      var mybutton = document.getElementById('myBtn');
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = 'block';
+        } else {
+          mybutton.style.display = 'none';
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+    <!---Filter jquery Code-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $('.list').click(function () {
+          const value = $(this).attr('data-filter');
+          if (value == 'All') {
+            $('.main').show('1000');
+          } else {
+            $('.main')
+              .not('.' + value)
+              .hide('1000');
+            $('.main')
+              .filter('.' + value)
+              .show('1000');
+          }
+        });
+
+        //add active class on selected item
+
+        $('.list').click(function () {
+          $(this).addClass('active').siblings().removeClass('active');
+        });
+      });
+    </script>
+
+    <script>
+      var typed = new Typed('#selectc', {
+        strings: ['Online/Contactless Hospital Management'],
+
+        typeSpeed: 100,
+        backSpeed: 140,
+        loop: true,
+      });
+    </script>
+
+    <script>
+      var typed = new Typed('#selectp', {
+        strings: ['Real Time Tracking of patients'],
+
+        typeSpeed: 100,
+        backSpeed: 130,
+        loop: true,
+      });
+    </script>
+
+    <script>
+      var typed = new Typed('#add', {
+        strings: ['Social Distancing and Geofence breach alerts'],
+
+        typeSpeed: 80,
+        backSpeed: 110,
+        loop: true,
+      });
+    </script>
+
+    <script>
+      var typed = new Typed('#order', {
+        strings: ['Health Monitoring- Pulse/oxygen level'],
+
+        typeSpeed: 100,
+        backSpeed: 125,
+        loop: true,
+      });
+
+      // Get the modal
+      var modal = document.getElementById('id01');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB9svilCeoVcGee5Tva12gvAt7NmUYoSpc',
+        authDomain: 'deepblue-ab539.firebaseapp.com',
+        databaseURL: 'https://deepblue-ab539-default-rtdb.firebaseio.com',
+        projectId: 'deepblue-ab539',
+        storageBucket: 'deepblue-ab539.appspot.com',
+        messagingSenderId: '693869040614',
+        appId: '1:693869040614:web:bb841fbc8e00c5f89a3c27',
+        measurementId: 'G-C9L065VTM5',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="./js/auth/login.js"></script>
+    <script src="./js/addBand.js"></script>
+  </body>
+</html>

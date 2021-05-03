@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qurantinno</title>
+
+    <!---Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!---Custom CSS-->
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/5888afab31.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--typed.js cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <!--Animate on Scroll CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Geofence Algo -->
+    <!-- <script
+      defer
+      type="module"
+      src="../js/geoFenceWebsite/wholeWebsiteAlgo.js"
+    ></script> -->
+  </head>
+
+  <body>
+    <!---Header Section-->
+    <section id="header" style="background-color: #363f4b">
+      <!---Navigation-->
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html" style="color: white"
+            >Qurantinno</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <form class="d-flex">
+                  <input
+                    class="form-control mr-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                    style="width: 550px"
+                  />
+                </form>
+              </li>
+              <li class="nav-item">
+                <button class="btn" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </li>
+              <li class="nav-item">
+                <a href="../index.html"
+                  ><button id="back" class="btn">
+                    <i class="fas fa-arrow-alt-circle-left"></i></button
+                ></a>
+              </li>
+
+              <li class="nav-item">
+                <a href="../html/alert.html">
+                  <button class="btn" type="submit">
+                    <i class="fas fa-bell"></i>
+                  </button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <button id="logout" class="btn">
+                  <i class="fas fa-sign-out-alt"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- Toast -->
+    <div id="geofenceToast"></div>
+
+    <!---Short Details Section-->
+    <section id="shortdetails">
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-md-6 col-sm-6 col-lg-4 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <a
+              onclick="document.getElementById('addp').style.display='block'"
+              style="text-decoration: none; color: black"
+            >
+              <div class="short d-flex flex-wrap align-items-center">
+                <div class="icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h4>Register Patient</h4>
+              </div></a
+            >
+          </div>
+
+          <div
+            class="col-md-6 col-sm-6 col-lg-4 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <a
+              href="../html/patientDetails.html"
+              style="text-decoration: none; color: black"
+            >
+              <div class="short d-flex flex-wrap align-items-center">
+                <div class="icon">
+                  <i class="fas fa-list-alt"></i>
+                </div>
+                <h4>Patient Details</h4>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="col-md-6 col-sm-6 col-lg-4 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <a
+              href="../html/trackingDetails.html"
+              style="text-decoration: none; color: black"
+            >
+              <div class="short d-flex flex-wrap align-items-center">
+                <div class="icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h4>Tracking Details</h4>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="col-md-6 col-sm-6 col-lg-4 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <a
+              onclick="document.getElementById('removep').style.display='block'"
+              style="text-decoration: none; color: black"
+            >
+              <div class="short d-flex flex-wrap align-items-center">
+                <div class="icon">
+                  <i class="fas fa-minus"></i>
+                </div>
+                <h4>Remove Patient</h4>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="col-md-6 col-sm-6 col-lg-4 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <a
+              onclick="document.getElementById('receiverPositions').style.display='block'"
+              style="text-decoration: none; color: black"
+            >
+              <div class="short d-flex flex-wrap align-items-center">
+                <div class="icon">
+                  <i class="fas fa-plus"></i>
+                </div>
+                <h4>Recivers Positions</h4>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="col-md-6 col-sm-6 col-lg-4 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <a
+              onclick="document.getElementById('roomDim').style.display='block'"
+              style="text-decoration: none; color: black"
+            >
+              <div class="short d-flex flex-wrap align-items-center">
+                <div class="icon">
+                  <i class="fas fa-plus"></i>
+                </div>
+                <h4>Room Dimensions</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTE: Models Code -->
+    <!--Set Receiver Position -->
+    <div id="receiverSnackbar">Recivers Updated successfully</div>
+    <div id="receiverPositions" class="modal">
+      <div class="modal-content animate">
+        <div class="imgcontainer">
+          <span
+            onclick="document.getElementById('receiverPositions').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+          <h1 style="text-align: center">Add Receiver</h1>
+        </div>
+
+        <div class="container">
+          <label for="bandid"><b>Receiver 1 Location</b></label>
+          <div class="row justify-content-around">
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Receiver 1 X"
+              id="rec1x"
+              name="uname"
+              required
+            />
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Receiver 1 Y"
+              id="rec1y"
+              name="uname"
+              required
+            />
+          </div>
+
+          <label for="bandid"><b>Receiver 2 Location</b></label>
+          <div class="row justify-content-around">
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Receiver 2 X"
+              id="rec2x"
+              name="uname"
+              required
+            />
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Receiver 3 Y"
+              id="rec2y"
+              name="uname"
+              required
+            />
+          </div>
+
+          <label for="bandid"><b>Receiver 3 Location</b></label>
+          <div class="row justify-content-around">
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Receiver 3 X"
+              id="rec3x"
+              name="uname"
+              required
+            />
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Receiver 3 Y"
+              id="rec3y"
+              name="uname"
+              required
+            />
+          </div>
+
+          <button class="lbutton" id="receiverSubmitBUtton">
+            Add Recivers
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--Set Receiver Position -->
+    <div id="snackbar">Room Dimensions Added successfully!</div>
+    <div id="roomDim" class="modal">
+      <div class="modal-content animate">
+        <div class="imgcontainer">
+          <span
+            onclick="document.getElementById('roomDim').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+          <h1 style="text-align: center">Add Room Dimensions</h1>
+        </div>
+
+        <div class="container">
+          <label for="bandid"><b>Horizontal Dimension (X-axis)</b></label>
+          <div class="row justify-content-around">
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Horizontal strting (X0)"
+              id="roomDimX0"
+              name="uname"
+              required
+            />
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Horizontal strting (X1)"
+              id="roomDimX1"
+              name="uname"
+              required
+            />
+          </div>
+
+          <label for="bandid"><b>Vertical Dimension (Y-axis)</b></label>
+          <div class="row justify-content-around">
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Horizontal strting (Y0)"
+              id="roomDimY0"
+              name="uname"
+              required
+            />
+            <input
+              class="col-4"
+              type="text"
+              placeholder="Enter Horizontal strting (Y1)"
+              id="roomDimY1"
+              name="uname"
+              required
+            />
+          </div>
+
+          <button class="lbutton" id="addRoomDim">Add Room Dimension</button>
+        </div>
+      </div>
+    </div>
+
+    <!--Remove Patients modal-->
+    <div id="removep" class="modal">
+      <div class="modal-content animate" action="categories.php">
+        <div class="imgcontainer">
+          <span
+            onclick="document.getElementById('removep').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+          <h1 style="text-align: center">Discharge a Patient!</h1>
+        </div>
+
+        <div class="container">
+          <label for="bandid"><b>Patient Name</b></label>
+
+          <select name="uname" id="pid"></select>
+
+          <button class="lbutton" id="pbutton" onclick="PsubmitClick()">
+            Discharge Patient
+          </button>
+          <div id="Psnackbar">Patient Discharged!</div>
+        </div>
+      </div>
+    </div>
+
+    <!--Register Patients modal-->
+    <div id="Asnackbar">Patient Registered!</div>
+    <div id="addp" class="modal">
+      <div class="modal-reg animate" action="categories.php">
+        <div class="imgcontainer">
+          <span
+            onclick="document.getElementById('addp').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+          <h1 style="text-align: center">Patient Registration!</h1>
+        </div>
+
+        <div class="container">
+          <label for="bandid"><b>Patient Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter Patient name"
+            id="Patient-name"
+            name="pname"
+            required
+          />
+
+          <label for="bandid"><b>Band Id</b></label>
+          <select id="BandId"></select>
+
+          <label for="bandid"><b>Room allocated</b></label>
+          <input
+            type="text"
+            placeholder="Enter room allocated"
+            id="Room-allocated"
+            name="bid"
+            required
+          />
+
+          <button class="lbutton" id="Abutton" onclick="AsubmitClick()">
+            Register Patient
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!---Services Section-->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="flip-up" data-aos-duration="1800">
+            <div class="serviceContainer">
+              <h6 style="color: black">Safety & Security</h6>
+              <h3 style="color: black">Qurantinno Facilities</h3>
+              <p style="color: black">
+                Register. Track. Check up on your loved ones.<br />
+                STAY SAFE! STAY SECURE!!
+              </p>
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header p-0" id="headingOne">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-block text-left p-3"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        01. Register & Discharge Patient<i
+                          class="fas fa-location-arrow ml-3"
+                        ></i>
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div
+                    id="collapseOne"
+                    class="collapse"
+                    aria-labelledby="headingOne"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      Register patient into the hospital. We look after them.
+                      Their health and security is our top priority.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header p-0" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-block text-left collapsed p-3"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        02. Patient Details
+                        <i class="fas fa-location-arrow ml-3"></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      Check up on your loved ones. Look at their health reports
+                      and well being.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header p-0" id="headingThree">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-block text-left collapsed p-3"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        03. Tracking Details<i
+                          class="fas fa-location-arrow ml-3"
+                        ></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapseThree"
+                    class="collapse"
+                    aria-labelledby="headingThree"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      Geofencing & Bands- We take care of their safety as well
+                      as people around them.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header p-0" id="headingFour">
+                    <h2 class="mb-0">
+                      <button
+                        class="btn btn-block text-left collapsed p-3"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseFour"
+                      >
+                        04. Add Bands <i class="fas fa-location-arrow ml-3"></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    id="collapseFour"
+                    class="collapse"
+                    aria-labelledby="headingFour"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      To keep track of patients health and movements.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6 col-md-10 col-sm-8 mt-4 mt-lg-0"
+            data-aos="zoom-out"
+            data-aos-duration="1800"
+          >
+            <div class="imageContainer">
+              <svg viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="25"></circle>
+              </svg>
+
+              <div class="round"></div>
+              <img
+                class="img1"
+                style="height: 200px; width: 250px"
+                src="../images/patientr.png"
+                alt=""
+                srcset=""
+              />
+              <img class="img2" src="../images/bandr.png" alt="" srcset="" />
+              <img class="img4" src="../images/ptrackr.png" alt="" srcset="" />
+              <img class="img3" src="../images/infor.png" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer Section-->
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footerContainer">
+              <h1 style="color: white">
+                <i class="fas fa-plus-circle" style="color: white"></i>&nbsp
+                Qurantinno
+              </h1>
+              <h6 style="color: white">
+                Health is Wealth. Maintain social distancing<br />And stay away
+                frorm corona virus
+              </h6>
+              <ul>
+                <li>
+                  <i class="fas fa-address-card" style="color: white"></i>121,
+                  Shivaji Nagar, Pune
+                </li>
+                <li><i class="fas fa-envelope"></i>example@gmail.com</li>
+                <li><i class="fas fa-phone-alt"></i> 8457693211</li>
+                <br />
+                <li style="display: inline-block">
+                  <i class="fab fa-facebook"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-instagram"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-twitter"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-youtube"></i>
+                </li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li style="display: inline-block">
+                  <i class="fab fa-facebook-messenger"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="footerContainer">
+              <h5 style="color: white">Quick Links</h5>
+              <ul>
+                <li><i class="fas fa-angle-right"></i> Login</li>
+                <li><i class="fas fa-angle-right"></i> Add Patient</li>
+                <li><i class="fas fa-angle-right"></i> Add Band</li>
+                <li><i class="fas fa-angle-right"></i> Discharge Patient</li>
+                <li><i class="fas fa-angle-right"></i> Track Patients</li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="col-lg-4">
+            <div class="footerContainer">
+              <h5>Contact Us</h5>
+              <ul>
+                <li><i class="fas fa-phone-alt"></i> 9169068212</li>
+                <li><i class="fas fa-phone-alt"></i> 8457693211</li>
+                <li><i class="fas fa-envelope"></i>example@gmail.com</li>
+                <li><i class="fas fa-envelope"></i>example@gmail.com</li>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> Panvel, Navi mumbai
+                </li>
+              </ul>
+            </div>
+          </div> -->
+          <div class="col-lg-3">
+            <div class="footerContainer">
+              <h5 style="color: white">Services</h5>
+              <ul>
+                <li><i class="fas fa-angle-right"></i>Geofence Alert</li>
+                <li><i class="fas fa-angle-right"></i>Pulse rate check</li>
+                <li><i class="fas fa-angle-right"></i>Tracking of Patients</li>
+                <li><i class="fas fa-angle-right"></i>Social Distancing</li>
+              </ul>
+              <!-- </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Scroll to Top Button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fas fa-rocket"></i>
+    </button>
+
+    <!--Scroll to top JS-->
+    <script>
+      //Get the button
+      var mybutton = document.getElementById('myBtn');
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = 'block';
+        } else {
+          mybutton.style.display = 'none';
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+    <!---Filter jquery Code-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $('.list').click(function () {
+          const value = $(this).attr('data-filter');
+          if (value == 'All') {
+            $('.main').show('1000');
+          } else {
+            $('.main')
+              .not('.' + value)
+              .hide('1000');
+            $('.main')
+              .filter('.' + value)
+              .show('1000');
+          }
+        });
+
+        //add active class on selected item
+
+        $('.list').click(function () {
+          $(this).addClass('active').siblings().removeClass('active');
+        });
+      });
+    </script>
+
+    <!--Animate on Scroll JS CDN-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Animate on Scroll Initialisation-->
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('receiverPositions');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+    <script>
+      var modal = document.getElementById('roomDim');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('addp');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('removep');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+
+    <!---Bootstrap JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"
+      integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--FEEDBACK FORM-->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB9svilCeoVcGee5Tva12gvAt7NmUYoSpc',
+        authDomain: 'deepblue-ab539.firebaseapp.com',
+        databaseURL: 'https://deepblue-ab539-default-rtdb.firebaseio.com',
+        projectId: 'deepblue-ab539',
+        storageBucket: 'deepblue-ab539.appspot.com',
+        messagingSenderId: '693869040614',
+        appId: '1:693869040614:web:bb841fbc8e00c5f89a3c27',
+        measurementId: 'G-C9L065VTM5',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script defer src="../js/auth/isSignedIn.js"></script>
+    <script defer src="../js/auth/signOut.js"></script>
+    <script defer src="../js/addBand.js"></script>
+    <script defer src="../js/removePatient.js"></script>
+    <script defer src="../js/addPatient.js"></script>
+    <script defer src="../js/categories.js"></script>
+    <script defer src="../js/firebaseUpdate/addReceivers.js"></script>
+    <script defer src="../js/firebaseUpdate/addRoomDim.js"></script>
+  </body>
+</html>
